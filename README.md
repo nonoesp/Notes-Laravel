@@ -44,7 +44,7 @@ In the .htaccess file, assume we already have the RewriteRule to correctly displ
 </IfModule>
 ```
 
-# [Arrays on Steroids](http://www.laravel-tricks.com/tricks/arrays-on-steroids)
+## [Arrays on Steroids](http://www.laravel-tricks.com/tricks/arrays-on-steroids)
 
 ```php
 $devs = [
