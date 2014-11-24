@@ -45,7 +45,7 @@ In the .htaccess file, assume we already have the RewriteRule to correctly displ
 ```
 
 ## Collection from Array
-*(adapted from [here](http://www.laravel-tricks.com/tricks/arrays-on-steroids))*
+*Code adapted from [here](http://www.laravel-tricks.com/tricks/arrays-on-steroids).*
 
 ```php
 $devs = [
