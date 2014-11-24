@@ -13,7 +13,7 @@ I am Nono Martínez Alonso, a Spanish architect currently working at Foster + Pa
 
 ## Route
 
-```
+```php
 // With alias and function
 Route::get('page', array('as' => 'alias', function(){});
 // With controller and alias
@@ -28,7 +28,7 @@ HTML::link('articles/', 'Articles')
 
 ## Route URL with Parameters
 
-```
+```php
 URL::route('articles.alias', array('id' => $id));
 ```
 
@@ -36,7 +36,7 @@ URL::route('articles.alias', array('id' => $id));
 
 In the .htaccess file, assume we already have the RewriteRule to correctly display pretty URLs, then we have to add the following line with **/foldertoignore** being the name of the folder you want to behave as if Laravel was not installed into your server.
 
-```
+```php
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteRule ^(.*)$ public/$1 [L]
@@ -44,9 +44,9 @@ In the .htaccess file, assume we already have the RewriteRule to correctly displ
 </IfModule>
 ```
 
-[Arrays on Steroids](http://www.laravel-tricks.com/tricks/arrays-on-steroids)
+# [Arrays on Steroids](http://www.laravel-tricks.com/tricks/arrays-on-steroids)
 
-```
+```php
 $devs = [
 ['name' => 'Anouar Abdessalam','email' => 'dtekind@gmail.com'],
 ['name' => 'Bilal Ararou','email' => 'have@noIdea.com']
@@ -67,7 +67,7 @@ $devs->push(['name' => 'xroot','email' => 'xroot@root.com']); //this will add th
 
 The following example would handle the error *ModelNotFoundException,* which would be thrown by the Eloquent model.
 
-```
+```php
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 App::error(function(ModelNotFoundException $e)
@@ -80,13 +80,15 @@ App::error(function(ModelNotFoundException $e)
 
 (from [Laravel 4.2 Controllers](http://laravel.com/docs/4.2/controllers))
 
-Controller route with Filter
-```
+### Controller route with Filter
+
+```php
 Route::get('profile', array('before' => 'auth', 'uses' => 'UserController@showProfile'));
 ```
 
-Filters from within a controller
-```
+### Filters from within a controller
+
+```php
 class UserController extends BaseController {
 
 	public function __construct()
