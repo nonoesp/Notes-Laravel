@@ -44,23 +44,24 @@ In the .htaccess file, assume we already have the RewriteRule to correctly displ
 </IfModule>
 ```
 
-## [Arrays on Steroids](http://www.laravel-tricks.com/tricks/arrays-on-steroids)
+## Collection from Array (adapted from [here](http://www.laravel-tricks.com/tricks/arrays-on-steroids)
 
 ```php
 $devs = [
-['name' => 'Anouar Abdessalam','email' => 'dtekind@gmail.com'],
-['name' => 'Bilal Ararou','email' => 'have@noIdea.com']
+['name' => 'Nono Martínez Alonso','email' => 'random@gmail.com'],
+['name' => 'John Appleseed','email' => 'other@gmail.com']
 ];
 
-//Now I can overwrite the array variable:
+// Convert array to collection
 
 $devs = new Illuminate\Support\Collection( $devs );
 
 //Now I can do something like :
-$devs->first() //['name' => 'Anouar Abdessalam','email' => 'dtekind@gmail.com']
+$devs->first() // ['name' => 'Nono Martínez Alonso','email' => 'random@gmail.com']
 
-$devs->last() //['name' => 'Bilal Ararou','email' => 'have@noIdea.com']
-$devs->push(['name' => 'xroot','email' => 'xroot@root.com']); //this will add the new dev to the collection .
+$devs->last() // ['name' => 'John Appleseed','email' => 'other@gmail.com']
+
+$devs->push(['name' => 'Bill Gates','email' => 'bill@microsoft.com']); // will add to collection
 ```
 
 ## Error Handling with Routes
