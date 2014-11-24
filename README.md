@@ -44,7 +44,8 @@ In the .htaccess file, assume we already have the RewriteRule to correctly displ
 </IfModule>
 ```
 
-## Collection from Array (adapted from [here](http://www.laravel-tricks.com/tricks/arrays-on-steroids)
+## Collection from Array
+*(adapted from [here](http://www.laravel-tricks.com/tricks/arrays-on-steroids))*
 
 ```php
 $devs = [
