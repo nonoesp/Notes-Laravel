@@ -11,6 +11,16 @@ Hi there! I have been taking some notes on common tasks I had to do using the [L
 
 I am Nono Martínez Alonso, a Spanish architect currently working at Foster + Partners. I tweet at [@nonoesp](http://www.twitter.com/nonoesp) and write at [nono.ma/says](http://nono.ma/says). I would love to hear about it if you find this useful. Thanks!
 
+## Further Reading
+
+Articles from my blog related with Laravel.
+
+* [Localizing a Laravel App](http://nono.ma/says/localizing-a-laravel-web-app)
+* [Incoming Laravel Posts](http://nono.ma/says/incoming-laravel-posts)
+* [Laravel Introduction Videos](http://nono.ma/says/laravel-introduction-videos) (Spanish)
+
+# Notes
+
 ## Route
 
 ```php
