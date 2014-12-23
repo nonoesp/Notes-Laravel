@@ -113,3 +113,13 @@ class UserController extends BaseController {
 	}
 }
 ```
+
+### Send Email and Pass Arguments to the Closure
+
+*Assume the $order variable has a value for $order->token, and the variable $recipient has a value $recipient->to and $recipient->email. Those values would have been set previously outside the closure. The mail body is created with a view, located at app/views/emails/my-view.blade.php—which will receive all the date we pass into the array as key-value.*
+
+```php
+Mail::send('emails.my-view', array('key' => 'value'), function($message) use ($order, $recipient) {
+  $message->to($recipient->email, $recipient->name)->subject('Thank You for Your Order '.$order->token);
+}
+```
