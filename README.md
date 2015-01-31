@@ -123,3 +123,7 @@ Mail::send('emails.my-view', array('key' => 'value'), function($message) use ($o
   $message->to($recipient->email, $recipient->name)->subject('Thank You for Your Order '.$order->token);
 }
 ```
+
+## License
+
+Notes-MicroStation is licensed under the MIT license. (http://opensource.org/licenses/MIT)
