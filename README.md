@@ -9,7 +9,7 @@ Hi there! I have been taking some notes on common tasks I had to do using the [L
 
 ## About
 
-I am Nono Martínez Alonso, a Spanish architect currently working at Foster + Partners. I tweet at [@nonoesp](http://www.twitter.com/nonoesp) and write at [nono.ma/says](http://nono.ma/says). I would love to hear about it if you find this useful. Thanks!
+I am Nono Martínez Alonso, a Spanish architect—previously working at Foster + Partners and AR-MA. I tweet at [@nonoesp](http://www.twitter.com/nonoesp) and write at [nono.ma/says](http://nono.ma/says). I would love to hear about it if you find this useful. Thanks!
 
 ## Further Reading
 
@@ -25,12 +25,14 @@ Articles from my blog related with Laravel.
 
 ```php
 // With alias and function
-Route::get('page', array('as' => 'alias', function(){});
+Route::get('path', array('as' => 'alias', function(){}));
 // With controller and alias
-Route::get('page', array('as' => 'alias', 'uses' => 'SomeController@getPage'));
+Route::get('path', array('as' => 'alias', 'uses' => 'SomeController@getPage'));
+// With a before filter
+Route::get('path', array('before' => 'is_admin', 'uses' => function(){}));
 ```
 
-## Link
+## HTML Link
 
 ```php
 HTML::link('articles/', 'Articles')
@@ -88,6 +90,16 @@ App::error(function(ModelNotFoundException $e)
 });
 ```
 
+## Handling Database Connection Error
+
+```php
+App::error(function(PDOException $exception)
+{
+    Log::error("Error connecting to database: ".$exception->getMessage());
+    return Redirect::to('/error-database');
+});
+```
+
 ## Controller Filters
 
 (from [Laravel 4.2 Controllers](http://laravel.com/docs/4.2/controllers))
@@ -126,4 +138,4 @@ Mail::send('emails.my-view', array('key' => 'value'), function($message) use ($o
 
 ## License
 
-Notes-MicroStation is licensed under the MIT license. (http://opensource.org/licenses/MIT)
+Notes-Laravel is licensed under the MIT license. (http://opensource.org/licenses/MIT)
