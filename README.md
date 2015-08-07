@@ -136,6 +136,17 @@ Mail::send('emails.my-view', array('key' => 'value'), function($message) use ($o
 }
 ```
 
+## Packages
+
+### Package Views
+
+By default, Laravel allows to use package resources by using the package part of vendor/package.
+
+```php
+// Package resources accessed via default package name
+$view = View::make('package::foo');
+``
+
 ## License
 
 Notes-Laravel is licensed under the MIT license. (http://opensource.org/licenses/MIT)
