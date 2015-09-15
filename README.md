@@ -145,7 +145,7 @@ By default, Laravel allows to use package resources by using the package part of
 ```php
 // Package resources accessed via default package name
 $view = View::make('package::foo');
-``
+```
 
 ## License
 
