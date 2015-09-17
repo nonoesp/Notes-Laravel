@@ -147,6 +147,55 @@ By default, Laravel allows to use package resources by using the package part of
 $view = View::make('package::foo');
 ```
 
+## Laravel 5
+
+Starter notes for Laravel 5.
+
+### Change Your App Name (and Namespace)
+
+	php artisan app:name Yourappname
+
+### Search Artisan Commands
+
+	php artisan | grep make
+
+### Create a Controller
+
+This will create a resource controller, which includes index, create, store, and all other restful methods.
+
+	php artisan make:controller MagicController
+
+### Create a Middleware
+
+	php artisan make:middleware
+
+```
+class BeforeMiddleware implements Middleware {
+
+    public function handle($request, Closure $next)
+    {
+        // Do Stuff
+        return $next($request);
+    }
+
+}
+```
+
+```
+class AfterMiddleware implements Middleware {
+
+    public function handle($request, Closure $next)
+    {
+        $response = $next($request);
+        // Do stuff
+        return $response;
+    }
+
+}
+```
+
+Thanks to [@stauffermatt](http://twitter.com/@stauffermatt) for this example.
+
 ## License
 
 Notes-Laravel is licensed under the MIT license. (http://opensource.org/licenses/MIT)
