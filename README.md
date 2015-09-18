@@ -212,16 +212,16 @@ All this code assumes our package is named nonoesp/thinker.
 
 First, we need to create publishing file groups of our resources. In this example, I am creating a group tagged with ```views```and a group tagged with ```lang```.
 
-```
-       // Publish Views
-        $this->publishes([
-            __DIR__.'/../views' => $publish_path_views,
-        ], 'views');
+```php
+// Publish Views
+$this->publishes([
+    __DIR__.'/../views' => $publish_path_views,
+], 'views');
 
-        // Publish Lang
-        $this->publishes([
-            __DIR__.'/../lang' => $publish_path_lang,
-        ], 'lang');        
+// Publish Lang
+$this->publishes([
+    __DIR__.'/../lang' => $publish_path_lang,
+], 'lang');        
 ```
 
 After specifying your file groups inside your Servide Provider, just run the same command specifying the ```tag``` of the file group you want to publish (```views```, for instance).
