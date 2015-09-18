@@ -196,6 +196,18 @@ class AfterMiddleware implements Middleware {
 
 Thanks to [@stauffermatt](http://twitter.com/@stauffermatt) for this example.
 
+### Publishing Package Resources
+
+All this code assumes our package is named nonoesp/thinker.
+
+Publish Resources
+
+	php artisan vendor:publish --provider="Nonoesp\Thinker\ThinkerServiceProvider"
+
+Publish Resources Overriding Existing Ones
+
+	php artisan vendor:publish --provider="Nonoesp\Thinker\ThinkerServiceProvider" --force
+
 ## License
 
 Notes-Laravel is licensed under the MIT license. (http://opensource.org/licenses/MIT)
