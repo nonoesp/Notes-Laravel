@@ -200,13 +200,33 @@ Thanks to [@stauffermatt](http://twitter.com/@stauffermatt) for this example.
 
 All this code assumes our package is named nonoesp/thinker.
 
-Publish Resources
+#### Publish Resources
 
 	php artisan vendor:publish --provider="Nonoesp\Thinker\ThinkerServiceProvider"
 
-Publish Resources Overriding Existing Ones
+#### Publish Resources Overriding Existing Ones
 
 	php artisan vendor:publish --provider="Nonoesp\Thinker\ThinkerServiceProvider" --force
+
+#### Publish Resources of A Given File Group
+
+First, we need to create publishing file groups of our resources. In this example, I am creating a group tagged with ```views```and a group tagged with ```lang```.
+
+```
+       // Publish Views
+        $this->publishes([
+            __DIR__.'/../views' => $publish_path_views,
+        ], 'views');
+
+        // Publish Lang
+        $this->publishes([
+            __DIR__.'/../lang' => $publish_path_lang,
+        ], 'lang');        
+```
+
+After specifying your file groups inside your Servide Provider, just run the same command specifying the ```tag``` of the file group you want to publish (```views```, for instance).
+
+	php artisan vendor:publish --provider="Nonoesp\Thinker\ThinkerServiceProvider" --tag=views
 
 ## License
 
