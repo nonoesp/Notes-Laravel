@@ -214,14 +214,10 @@ First, we need to create publishing file groups of our resources. In this exampl
 
 ```php
 // Publish Views
-$this->publishes([
-    __DIR__.'/../views' => $publish_path_views,
-], 'views');
+$this->publishes([ __DIR__.'/../views' => $publish_path_views, ], 'views');
 
 // Publish Lang
-$this->publishes([
-    __DIR__.'/../lang' => $publish_path_lang,
-], 'lang');        
+$this->publishes([ __DIR__.'/../lang' => $publish_path_lang, ], 'lang');        
 ```
 
 After specifying your file groups inside your Servide Provider, just run the same command specifying the ```tag``` of the file group you want to publish (```views```, for instance).
