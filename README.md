@@ -44,6 +44,12 @@ HTML::link('articles/', 'Articles')
 URL::route('articles.alias', array('id' => $id));
 ```
 
+## Conditional Blade Template Extends
+
+```php
+@extends(( (true) ? 'some.layout' : 'other.layout' ))
+```
+
 ## Ignore a Subfolder
 
 In the .htaccess file, assume we already have the RewriteRule to correctly display pretty URLs, then we have to add the following line with **/foldertoignore** being the name of the folder you want to behave as if Laravel was not installed into your server.
