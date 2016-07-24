@@ -224,6 +224,19 @@ After specifying your file groups inside your Servide Provider, just run the sam
 
 	php artisan vendor:publish --provider="Nonoesp\Thinker\ThinkerServiceProvider" --tag=views
 
+### Advanced Queries
+
+#### Ask for hasMany Amount
+
+```
+public function scopeCommentAmount($query, $amount)
+{
+	return $query->has('comments', '=', $amount);
+}
+```
+
+Then we can survey our article with `Article::commentAmount(4)->get()`.
+
 ## License
 
 Notes-Laravel is licensed under the MIT license. (http://opensource.org/licenses/MIT)
