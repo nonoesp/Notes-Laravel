@@ -235,6 +235,18 @@ public function scopeCommentAmount($query, $amount)
 }
 ```
 
+#### Boolean Queries combined with hasMany
+```
+public function scopeVisibleFor($query, $handle)
+{
+	$query->has("recipients", "=", 0)
+    	  ->orWhereHas('recipients', function($q) use ($handle)
+    		{
+				$q->where("twitter", "=", $handle);
+    		});
+}
+```
+
 Then we can survey our article with `Article::commentAmount(4)->get()`.
 
 ## License
