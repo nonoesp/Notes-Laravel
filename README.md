@@ -228,7 +228,7 @@ After specifying your file groups inside your Servide Provider, just run the sam
 
 #### Ask for hasMany Amount
 
-```
+```php
 public function scopeCommentAmount($query, $amount)
 {
 	return $query->has('comments', '=', $amount);
@@ -236,7 +236,8 @@ public function scopeCommentAmount($query, $amount)
 ```
 
 #### Boolean Queries combined with hasMany
-```
+
+```php
 public function scopeVisibleFor($query, $handle)
 {
 	$query->has("recipients", "=", 0)
