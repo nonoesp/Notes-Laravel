@@ -50,6 +50,10 @@ URL::route('articles.alias', array('id' => $id));
 @extends(( (true) ? 'some.layout' : 'other.layout' ))
 ```
 
+## Add A 404 View
+
+Laravel handles 404 errors, so you just need to supply a named `404.blade.php` inside `resources/views/errors/`.
+
 ## Ignore a Subfolder
 
 In the .htaccess file, assume we already have the RewriteRule to correctly display pretty URLs, then we have to add the following line with **/foldertoignore** being the name of the folder you want to behave as if Laravel was not installed into your server.
