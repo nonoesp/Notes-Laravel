@@ -54,6 +54,8 @@ URL::route('articles.alias', array('id' => $id));
 
 Laravel handles 404 errors, so you just need to supply a named `404.blade.php` inside `resources/views/errors/`.
 
+(In case you need to do an `Auth::check()` from within that view, I found the need to move the StartSession and ShareErrorsFromSession in Laravel 5.2 from the `$middlewareGroups` `'web'` into `$middleware`, copying them before my `RememberMiddleware`. After that, `Auth::check()` worked as expected reading the session.)
+
 ## Ignore a Subfolder
 
 In the .htaccess file, assume we already have the RewriteRule to correctly display pretty URLs, then we have to add the following line with **/foldertoignore** being the name of the folder you want to behave as if Laravel was not installed into your server.
