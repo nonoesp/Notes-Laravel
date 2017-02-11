@@ -148,6 +148,16 @@ Mail::send('emails.my-view', array('key' => 'value'), function($message) use ($o
 }
 ```
 
+### Handle An NotFoundHttpException
+
+Put the following code inside `app/Exceptions/Handler.php`.
+
+```php
+if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+     return response()->view('errors.404', [], 404);
+}
+```
+
 ## Packages
 
 ### Package Views
