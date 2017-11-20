@@ -138,6 +138,25 @@ class UserController extends BaseController {
 }
 ```
 
+### Flush the Session
+
+```php
+Route::get('flush', function (Request $request) {
+	Cache::flush();
+	$request->session()->flush();
+});
+```
+
+### Display All Your Current Hashes (from laravel-hashids)
+
+Route::get('hashes', function(){
+  echo '<style>body {max-width:100px;margin:auto;}</style>';
+  for($i = 0; $i < 1000; $i++) {
+    echo "nono.ma/e/".Hashids::encode($i);
+    echo '<br>';
+  }
+});
+
 ### Send Email and Pass Arguments to the Closure
 
 *Assume the $order variable has a value for $order->token, and the variable $recipient has a value $recipient->to and $recipient->email. Those values would have been set previously outside the closure. The mail body is created with a view, located at app/views/emails/my-view.blade.php—which will receive all the date we pass into the array as key-value.*
