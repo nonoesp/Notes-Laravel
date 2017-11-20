@@ -138,6 +138,30 @@ class UserController extends BaseController {
 }
 ```
 
+### Create A Fake iOS App with Custom Icon
+
+```php
+Route::get('icon/{name}', function($domain, $name) {
+  $url = '/img/writing/suggestive-drawing/'.$name.'.png';
+echo '
+	<!-- Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="'.$url.'">
+	<link rel="icon" type="image/png" href="'.$url.'" sizes="32x32">
+	<link rel="icon" type="image/png" href="'.$url.'" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="'.$url.'" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="apple-touch-icon" sizes="72x72" href="'.$url.'" />
+	<link rel="apple-touch-icon" sizes="114x114" href="'.$url.'" />
+	<meta name="apple-mobile-web-app-title" content="'.$name.'" />
+	<link rel="apple-touch-icon-precomposed" href="'.$url.'" />
+	<link rel="apple-touch-icon" href="'.$url.'" />';
+
+  echo '<img src="'.$url.'" width=300>';
+});
+```
+
 ### Flush the Session
 
 ```php
